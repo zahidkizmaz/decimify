@@ -27,7 +27,6 @@ line-length = 88
 target-version = "py311"
 
 select = [
-	"I",   # isort
 	"PL",  # pylint
 	"F",   # pyflakes
 	"UP",  # pyupgrade
@@ -71,7 +70,7 @@ python_version = "3.11"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
-module = ["*.tests.*"]
+module = ["tests.*"]
 ignore_errors = true
 
 [tool.isort]
