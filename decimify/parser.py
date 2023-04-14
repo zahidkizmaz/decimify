@@ -1,7 +1,7 @@
 from decimal import Decimal, InvalidOperation
 
 
-def parse(str_number: str) -> Decimal:
+def decimify(str_number: str) -> Decimal:
     seperators = {".", ","}
     cleanup_characters = {" "}
 

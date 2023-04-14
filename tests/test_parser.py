@@ -17,7 +17,7 @@ class TestParse:
         ],
     )
     def test_parse_int_string_should_be_ok(self, num: str, expected: Decimal):
-        assert parser.parse(num) == expected
+        assert parser.decimify(num) == expected
 
     @pytest.mark.parametrize(
         ("num", "expected"),
@@ -30,7 +30,7 @@ class TestParse:
         ],
     )
     def test_parse_float_string_should_be_ok(self, num: str, expected: Decimal):
-        assert parser.parse(num) == expected
+        assert parser.decimify(num) == expected
 
     @pytest.mark.parametrize(
         ("num", "expected"),
@@ -45,7 +45,7 @@ class TestParse:
     def test_parse_float_string_with_comma_separators(
         self, num: str, expected: Decimal
     ):
-        assert parser.parse(num) == expected
+        assert parser.decimify(num) == expected
 
     @pytest.mark.parametrize(
         ("num", "expected"),
@@ -59,7 +59,7 @@ class TestParse:
     def test_parse_float_string_with_dot_and_comma_separators(
         self, num: str, expected: Decimal
     ):
-        assert parser.parse(num) == expected
+        assert parser.decimify(num) == expected
 
     @pytest.mark.parametrize(
         ("num", "expected"),
@@ -73,7 +73,7 @@ class TestParse:
     def test_parse_float_string_with_multiple_dot_and_comma_separators(
         self, num: str, expected: Decimal
     ):
-        assert parser.parse(num) == expected
+        assert parser.decimify(num) == expected
 
     @pytest.mark.parametrize(
         ("num", "expected"),
@@ -89,7 +89,7 @@ class TestParse:
         ],
     )
     def test_parse_float_string_with_spaces(self, num: str, expected: Decimal):
-        assert parser.parse(num) == expected
+        assert parser.decimify(num) == expected
 
     @pytest.mark.parametrize(
         "num",
@@ -109,4 +109,4 @@ class TestParse:
             InvalidOperation,
             match="Floating point separator:'.' exists multiple times.",
         ):
-            parser.parse(num)
+            parser.decimify(num)
