@@ -110,3 +110,15 @@ class TestParse:
             match="Floating point separator:'.' exists multiple times.",
         ):
             parser.decimify(num)
+
+    @pytest.mark.parametrize(
+        ("num", "expected"),
+        [
+            ("4 294 967 295,000", Decimal("4294967295.00")),
+            ("4 294 967.295,000", Decimal("4294967295.00")),
+            ("4.294.967.295,000", Decimal("4294967295.00")),
+            ("4,294,967,295.00", Decimal("4294967295.00")),
+        ],
+    )
+    def test_country_specific_formats(self, num: str, expected: Decimal):
+        assert parser.decimify(num) == expected
