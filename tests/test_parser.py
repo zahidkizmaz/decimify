@@ -1,4 +1,4 @@
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 
 import pytest
 
@@ -90,3 +90,23 @@ class TestParse:
     )
     def test_parse_float_string_with_spaces(self, num: str, expected: Decimal):
         assert parser.parse(num) == expected
+
+    @pytest.mark.parametrize(
+        "num",
+        [
+            "12,123.123.213",
+            "-12,123.123.213",
+            "12.123.123.213",
+            "-12.123.123.213",
+            "12 123.123.213",
+            "-12 123.123.213",
+        ],
+    )
+    def test_parse_float_string_with_multiple_floating_point_separators_should_fail(
+        self, num: str
+    ):
+        with pytest.raises(
+            InvalidOperation,
+            match="Floating point separator:'.' exists multiple times.",
+        ):
+            parser.parse(num)

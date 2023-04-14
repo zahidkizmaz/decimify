@@ -1,4 +1,4 @@
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 
 
 def parse(str_number: str) -> Decimal:
@@ -22,6 +22,11 @@ def _find_separator(str_number: str, seperators: set[str]) -> str:
         if separator_idx > found_separator_idx:
             found_separator = separator
             found_separator_idx = separator_idx
+
+    if found_separator and str_number.find(found_separator) != found_separator_idx:
+        raise InvalidOperation(
+            f"Floating point separator:'{found_separator}' exists multiple times."
+        )
 
     return found_separator
 
