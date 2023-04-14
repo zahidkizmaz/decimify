@@ -60,3 +60,33 @@ class TestParse:
         self, num: str, expected: Decimal
     ):
         assert parser.parse(num) == expected
+
+    @pytest.mark.parametrize(
+        ("num", "expected"),
+        [
+            ("12,123,123.213", Decimal("12123123.213")),
+            ("-12,123,123.213", Decimal("-12123123.213")),
+            ("12.123.123,213", Decimal("12123123.213")),
+            ("-12.123.123,213", Decimal("-12123123.213")),
+        ],
+    )
+    def test_parse_float_string_with_multiple_dot_and_comma_separators(
+        self, num: str, expected: Decimal
+    ):
+        assert parser.parse(num) == expected
+
+    @pytest.mark.parametrize(
+        ("num", "expected"),
+        [
+            ("12 123 123.213", Decimal("12123123.213")),
+            ("-12 123 123.213", Decimal("-12123123.213")),
+            ("12 123 123,213", Decimal("12123123.213")),
+            ("-12 123 123,213", Decimal("-12123123.213")),
+            ("12 123,123.213", Decimal("12123123.213")),
+            ("-12 123,123.213", Decimal("-12123123.213")),
+            ("12 123.123,213", Decimal("12123123.213")),
+            ("-12 123.123,213", Decimal("-12123123.213")),
+        ],
+    )
+    def test_parse_float_string_with_spaces(self, num: str, expected: Decimal):
+        assert parser.parse(num) == expected

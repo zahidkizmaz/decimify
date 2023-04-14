@@ -20,8 +20,8 @@ def _find_separator(str_number: str, seperators: set[str]) -> str:
     for separator in seperators:
         separator_idx = str_number.rfind(separator)
         if separator_idx > found_separator_idx:
-            found_separator_idx = separator_idx
             found_separator = separator
+            found_separator_idx = separator_idx
 
     return found_separator
 
