@@ -20,3 +20,13 @@ Parse numbers to Decimal
 | Thai                          | 4,294,967,295.00  |
 
 Data taken [from](https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html)
+
+## Usage
+
+```python
+from decimify import decimify
+
+my_decimal = decimify('23 234.678,00')
+my_decimal
+# Decimal('23234678.00')
+```
