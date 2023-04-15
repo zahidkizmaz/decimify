@@ -17,7 +17,7 @@ ruff = "*"
 isort = "*"
 pre-commit = "*"
 exceptiongroup = "*"
-pytest-cov = "^4.0.0"
+pytest-cov = "*"
 
 [build-system]
 requires = ["poetry-core"]
