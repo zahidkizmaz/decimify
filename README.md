@@ -26,7 +26,7 @@ Parse numbers with different formatting to builtin python Decimal.
 
 **decimify** aims to solve this problem by automatically converting many common formats into python `Decimal`.
 
-decimify does not have any external dependencies. It uses builtin python functions to convert string representation of numbers to decimal.
+Without having any external dependencies. It uses builtin python functions to convert string representation of numbers to Decimal.
 
 ## Installation
 
