@@ -2,7 +2,7 @@
 <!-- Please describe the current behavior that you are modifying. -->
 
 
-Issue URL: 
+Issue URL:
 
 
 ## What is the new behavior?
