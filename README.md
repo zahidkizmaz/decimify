@@ -1,6 +1,11 @@
 # decimify
 
-Parse numbers to Decimal
+[![CI](https://github.com/zahidkizmaz/decimify/workflows/CI/badge.svg?event=push)](https://github.com/zahidkizmaz/decimify/actions?query=event%3Apush+branch%3Amain+workflow%3ACI)
+[![Pypi](https://img.shields.io/pypi/v/decimify.svg)](https://pypi.python.org/pypi/decimify)
+[![Versions](https://img.shields.io/pypi/pyversions/decimify.svg)](https://github.com/zahidkizmaz/decimify)
+[![License](https://img.shields.io/github/license/zahidkizmaz/decimify.svg)](https://github.com/zahidkizmaz/decimify/blob/main/LICENSE)
+
+Parse numbers with different formatting to Decimal
 
 #### Some examples of large number presentations in all around the world:
 
@@ -20,6 +25,12 @@ Parse numbers to Decimal
 | Thai                          | 4,294,967,295.00  |
 
 Data taken [from](https://docs.oracle.com/cd/E19455-01/806-0169/overview-9/index.html)
+
+## Installation
+
+```shell
+pip install -U decimify
+```
 
 ## Usage
 
