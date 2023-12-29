@@ -11,10 +11,8 @@ python = ">=3.9.0,<=4.0.0"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "*"
-black = "*"
 pytest = "*"
 ruff = "*"
-isort = "*"
 pre-commit = "*"
 exceptiongroup = "*"
 pytest-cov = "*"
@@ -29,6 +27,7 @@ line-length = 88
 target-version = "py311"
 
 select = [
+	"I",   # isort
 	"PL",  # pylint
 	"F",   # pyflakes
 	"UP",  # pyupgrade
