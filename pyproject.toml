@@ -56,20 +56,11 @@ ignore = [ "D1" ] # pydocstyle missing docs
 [tool.ruff.pydocstyle]
 convention = "google"
 
-[tool.black]
-preview = true
-line-length = 88
-target-version = ['py311']
-
 [tool.mypy]
 strict = true
-python_version = "3.11"
+python_version = "3.12"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = ["tests.*"]
 ignore_errors = true
-
-[tool.isort]
-line_length = 88
-profile = "black"
