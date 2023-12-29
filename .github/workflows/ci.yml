@@ -28,6 +28,14 @@ jobs:
       - name: Installing dependencies
         run: poetry install --no-interaction
 
+      - name: set PY env variable for pre-commit cache
+        run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.cache/pre-commit
+          key: pre-commit|${{env.PY}}|${{hashFiles('.pre-commit-config.yaml')}}
+
       - name: Run linters
         run: |
           poetry run pre-commit run --all --show-diff-on-failure --color=always
