@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "decimify"
-version = "0.2.1"
+version = "0.2.2"
 description = "Parse numbers with different formatting to builtin python Decimal."
 authors = ["Zahid Kizmaz <tech@zahid.rocks>"]
 license = "MIT"
