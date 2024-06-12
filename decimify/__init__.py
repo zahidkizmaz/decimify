@@ -1,1 +1,1 @@
-from decimify.parser import decimify  # noqa: F401
+from decimify.parser import decimify as decimify
