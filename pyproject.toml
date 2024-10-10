@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "decimify"
-version = "0.2.2"
+version = "0.2.3"
 description = "Parse numbers with different formatting to builtin python Decimal."
 authors = ["Zahid Kizmaz <tech@zahid.rocks>"]
 license = "MIT"
@@ -24,7 +24,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 line-length = 88
-target-version = "py312"
+target-version = "py313"
 
 lint.select = [
 	"I",   # isort
@@ -59,7 +59,7 @@ convention = "google"
 
 [tool.mypy]
 strict = true
-python_version = "3.12"
+python_version = "3.13"
 ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
