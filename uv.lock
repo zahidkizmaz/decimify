@@ -95,7 +95,7 @@ toml = [
 
 [[package]]
 name = "decimify"
-version = "0.2.3"
+version = "0.2.9"
 source = { editable = "." }
 
 [package.dev-dependencies]
