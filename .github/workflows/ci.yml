@@ -16,17 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install poetry
-        run: pipx install poetry
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: setup-uv
+        uses: astral-sh/setup-uv@v4
         with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
           python-version: "3.13"
-          cache: "poetry"
 
       - name: Installing dependencies
-        run: poetry install --no-interaction
+        run: uv sync --all-extras --dev
 
       - name: set PY env variable for pre-commit cache
         run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
@@ -38,7 +36,7 @@ jobs:
 
       - name: Run linters
         run: |
-          poetry run pre-commit run --all --show-diff-on-failure --color=always
+          uv run pre-commit run --all --show-diff-on-failure --color=always
 
   tests:
     runs-on: ubuntu-latest
@@ -49,20 +47,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install poetry
-        run: pipx install poetry
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: setup-uv
+        uses: astral-sh/setup-uv@v4
         with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
           python-version: ${{ matrix.python-version }}
-          cache: "poetry"
 
       - name: Installing dependencies
-        run: poetry install --no-interaction
+        run: uv sync --all-extras --dev
 
       - name: Run tests
-        run: poetry run pytest --cov=./ --cov-report=xml
+        run: uv run pytest --cov=./ --cov-report=xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5

@@ -10,19 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install poetry
-        run: pipx install poetry
-
-      - uses: actions/setup-python@v5
+      - name: setup-uv
+        uses: astral-sh/setup-uv@v4
         with:
-          cache: "poetry"
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
           python-version: "3.13"
 
-      - name: Installing dependencies
-        run: poetry install --no-interaction
+      - name: Build package
+        run: uv build
 
       - name: Publish to pypi
         run: >
-          poetry publish --build
+          uv publish
           -u ${{ secrets.PYPI_USERNAME }}
           -p ${{ secrets.PYPI_PASSWORD }}
