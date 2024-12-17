@@ -15,7 +15,6 @@ jobs:
         with:
           enable-cache: true
           cache-dependency-glob: "**/pyproject.toml"
-          python-version: "3.13"
 
       - name: Build package
         run: uv build

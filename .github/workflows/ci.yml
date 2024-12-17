@@ -21,7 +21,6 @@ jobs:
         with:
           enable-cache: true
           cache-dependency-glob: "**/pyproject.toml"
-          python-version: "3.13"
 
       - name: Installing dependencies
         run: uv sync --all-extras --dev
