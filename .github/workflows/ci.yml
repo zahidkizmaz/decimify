@@ -16,12 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: setup-uv
+      - name: Setup uv
         uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true
           cache-dependency-glob: "**/pyproject.toml"
-          python-version: "3.13"
 
       - name: Installing dependencies
         run: uv sync --all-extras --dev
@@ -48,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: setup-uv
+      - name: Setup uv
         uses: astral-sh/setup-uv@v4
         with:
           enable-cache: true

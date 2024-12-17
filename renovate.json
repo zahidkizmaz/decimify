@@ -4,6 +4,7 @@
 		"config:recommended"
 	],
 	"lockFileMaintenance": {
-		"enabled": true
+		"enabled": true,
+		"automerge": true
 	}
 }
