@@ -13,11 +13,11 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-	"mypy>=1.13.0",
-	"pre-commit>=4.0.1",
-	"pytest>=8.3.4",
-	"pytest-cov>=6.0.0",
-	"ruff>=0.8.3",
+    "mypy>=1.13.0",
+    "pre-commit>=4.0.1",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.3",
 ]
 
 [tool.ruff]
@@ -25,26 +25,26 @@ line-length = 88
 target-version = "py313"
 
 lint.select = [
-	"I",   # isort
-	"PL",  # pylint
-	"F",   # pyflakes
-	"UP",  # pyupgrade
-	"ERA", # eradicate
-	"D",   # pydocstyle
-	"PIE", # flake8-pie
-	"N",   # pep8-naming
-	"S",   # flake8-bandit
-	"B",   # flake8-bugbear
-	"A",   # flake8-builtins
-	"T10", # flake8-debugger
-	"T20", # flake8-print
-	"PTH", # flake8-use-pathlib
-	"E",   # pycodestyle errors
-	"RUF", # ruff-specific rules
-	"PT",  # flake8-pytest-style
-	"W",   # pycodestyle warnings
-	"C4",  # flake8-comprehensions
-	"ARG", # flake8-unused-arguments
+    "I",   # isort
+    "PL",  # pylint
+    "F",   # pyflakes
+    "UP",  # pyupgrade
+    "ERA", # eradicate
+    "D",   # pydocstyle
+    "PIE", # flake8-pie
+    "N",   # pep8-naming
+    "S",   # flake8-bandit
+    "B",   # flake8-bugbear
+    "A",   # flake8-builtins
+    "T10", # flake8-debugger
+    "T20", # flake8-print
+    "PTH", # flake8-use-pathlib
+    "E",   # pycodestyle errors
+    "RUF", # ruff-specific rules
+    "PT",  # flake8-pytest-style
+    "W",   # pycodestyle warnings
+    "C4",  # flake8-comprehensions
+    "ARG", # flake8-unused-arguments
 ]
 lint.ignore = ["D1"] # pydocstyle missing docs
 
