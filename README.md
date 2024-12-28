@@ -3,7 +3,6 @@
 [![CI](https://github.com/zahidkizmaz/decimify/workflows/CI/badge.svg?event=push)](https://github.com/zahidkizmaz/decimify/actions?query=event%3Apush+branch%3Amain+workflow%3ACI)
 [![Pypi](https://img.shields.io/pypi/v/decimify.svg)](https://pypi.python.org/pypi/decimify)
 [![Versions](https://img.shields.io/pypi/pyversions/decimify.svg)](https://github.com/zahidkizmaz/decimify)
-[![Codecov](https://codecov.io/gh/zahidkizmaz/decimify/branch/main/graph/badge.svg?token=2O3A7Z5NKV)](https://codecov.io/gh/zahidkizmaz/decimify)
 [![License](https://img.shields.io/github/license/zahidkizmaz/decimify.svg)](https://github.com/zahidkizmaz/decimify/blob/main/LICENSE)
 
 Parse numbers with different formatting to builtin python Decimal.
@@ -39,7 +38,7 @@ pip install -U decimify
 ```python
 from decimify import decimify
 
-my_decimal = decimify('23 234.678,00')
+my_decimal = decimify("23 234.678,00")
 my_decimal
 # Decimal('23234678.00')
 ```
