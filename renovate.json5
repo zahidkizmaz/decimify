@@ -4,5 +4,12 @@
     "enabled": true,
     "automerge": true,
     "autoApprove": true,
-  }
+  },
+  packageRules: [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "autoApprove": true,
+    }
+  ]
 }
