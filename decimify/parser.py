@@ -24,9 +24,10 @@ def _find_separator(str_number: str, separators: set[str]) -> str:
             found_separator_idx = separator_idx
 
     if found_separator and str_number.find(found_separator) != found_separator_idx:
-        raise InvalidOperation(
-            f"Floating point separator:'{found_separator}' exists multiple times."
+        message = (
+            f"Floating point separator:'{found_separator}' exists multiple times.",
         )
+        raise InvalidOperation(message)
 
     return found_separator
 
