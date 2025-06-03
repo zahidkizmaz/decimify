@@ -43,7 +43,9 @@ class TestParse:
         ],
     )
     def test_parse_float_string_with_comma_separators(
-        self, num: str, expected: Decimal
+        self,
+        num: str,
+        expected: Decimal,
     ):
         assert parser.decimify(num) == expected
 
@@ -57,7 +59,9 @@ class TestParse:
         ],
     )
     def test_parse_float_string_with_dot_and_comma_separators(
-        self, num: str, expected: Decimal
+        self,
+        num: str,
+        expected: Decimal,
     ):
         assert parser.decimify(num) == expected
 
@@ -71,7 +75,9 @@ class TestParse:
         ],
     )
     def test_parse_float_string_with_multiple_dot_and_comma_separators(
-        self, num: str, expected: Decimal
+        self,
+        num: str,
+        expected: Decimal,
     ):
         assert parser.decimify(num) == expected
 
@@ -103,7 +109,8 @@ class TestParse:
         ],
     )
     def test_parse_float_string_with_multiple_floating_point_separators_should_fail(
-        self, num: str
+        self,
+        num: str,
     ):
         with pytest.raises(
             InvalidOperation,
