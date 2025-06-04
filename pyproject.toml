@@ -1,6 +1,6 @@
 [project]
 name = "decimify"
-version = "0.2.9"
+version = "0.2.10"
 description = "Parse numbers with different formatting to builtin python Decimal."
 authors = [{ name = "Zahid Kizmaz", email = "tech@zahid.rocks" }]
 classifiers = [
