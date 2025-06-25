@@ -27,7 +27,6 @@
             shellHook = ''
               if [ ! -d .venv ]; then
                 echo "Creating virtual environment..."
-                uv venv .venv
                 uv sync
               fi
               source .venv/bin/activate
