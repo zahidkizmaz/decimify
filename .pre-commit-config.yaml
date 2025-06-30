@@ -10,7 +10,7 @@ repos:
       - id: trailing-whitespace
       - id: check-added-large-files
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 39.83.6
+    rev: 41.17.2
     hooks:
       - id: renovate-config-validator
         args: [--strict]
