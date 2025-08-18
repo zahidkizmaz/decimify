@@ -23,7 +23,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["mypy==1.17.1", "pre-commit==4.3.0", "pytest==8.4.1", "ruff==0.12.9"]
+dev = ["pre-commit==4.3.0", "pytest==8.4.1", "ruff==0.12.9", "ty>=0.0.1a18"]
 
 [tool.ruff]
 line-length = 88
@@ -38,11 +38,3 @@ lint.ignore = ["D1"]  # pydocstyle missing docs
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
-
-[tool.mypy]
-strict = true
-python_version = "3.13"
-
-[[tool.mypy.overrides]]
-module = ["tests.*"]
-ignore_errors = true
