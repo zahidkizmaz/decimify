@@ -114,7 +114,7 @@ class TestParse:
     ):
         with pytest.raises(
             InvalidOperation,
-            match="Floating point separator:'.' exists multiple times.",
+            match=r"Floating point separator:'.' exists multiple times.",
         ):
             parser.decimify(num)
 
