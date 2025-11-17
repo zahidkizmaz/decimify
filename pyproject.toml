@@ -1,36 +1,39 @@
 [project]
 name = "decimify"
-version = "0.2.10"
+version = "0.3.0"
 description = "Parse numbers with different formatting to builtin python Decimal."
 authors = [{ name = "Zahid Kizmaz", email = "tech@zahid.rocks" }]
 classifiers = [
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
   "Programming Language :: Python",
 ]
 readme = "README.md"
 license = { file = "LICENSE" }
-requires-python = ">= 3.9"
+requires-python = ">= 3.10"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["pre-commit==4.3.0", "pytest==8.4.2", "ruff==0.14.5", "ty>=0.0.1a18"]
+dev = ["pre-commit==4.4.0", "pytest==9.0.1", "ruff==0.14.5", "ty>=0.0.1a18"]
 
 [tool.ruff]
 line-length = 88
-target-version = "py313"
+target-version = "py314"
 
 lint.select = ["ALL"]
-lint.ignore = ["D1"]  # pydocstyle missing docs
+lint.ignore = [
+  "D1",     # pydocstyle missing docs
+  "COM812", # ruff format conflict
+]
 
 [tool.ruff.lint.per-file-ignores]
 "**/tests/**" = ["S101", "ARG002", "ANN201"]
