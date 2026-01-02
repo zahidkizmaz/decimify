@@ -18,12 +18,12 @@
       perSystem =
         { pkgs, system, ... }:
         let
-          python313 = pkgs.python313.withPackages (ps: with ps; [ uv ]);
+          python314 = pkgs.python314.withPackages (ps: with ps; [ uv ]);
         in
         {
           devShells.default = pkgs.mkShell {
-            buildInputs = [ python313 ];
-            UV_PYTHON = "${python313}/bin/python";
+            buildInputs = [ python314 ];
+            UV_PYTHON = "${python314}/bin/python";
             shellHook = ''
               if [ ! -d .venv ]; then
                 echo "Creating virtual environment..."
