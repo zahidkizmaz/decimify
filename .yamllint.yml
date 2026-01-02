@@ -1,0 +1,10 @@
+extends: default
+rules:
+  document-start: disable
+  truthy: disable
+  line-length:
+    max: 120
+  comments:
+    require-starting-space: true
+    ignore-shebangs: true
+    min-spaces-from-content: 1
