@@ -23,7 +23,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["prek>=0.2.25", "pytest==9.0.2", "ruff==0.14.13", "ty>=0.0.8"]
+dev = ["prek>=0.2.25", "pytest==9.0.2", "ruff==0.14.14", "ty>=0.0.8"]
 
 [tool.ruff]
 line-length = 88
